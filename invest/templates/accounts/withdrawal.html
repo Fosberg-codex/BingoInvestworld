@@ -1,0 +1,135 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="sidebar-wrapper active">
+    <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+           
+            <div class="logo" >
+                <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+            </div>
+            <div class="toggler">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'dashboard' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'depositvip' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Deposit</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'transaction history'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Transaction History</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item active  ">
+                <a href="{% url 'withdrawal'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Withdrawal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 't and c'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>T & C</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+</div>
+<div id="main">
+<header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+        <i class="bi bi-justify fs-3"></i>
+    </a>
+</header>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Make Withdrawal Instantly</h3>
+                <p class="text-subtitle text-muted">Start depositing to see returns soon</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Withdrawal</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Withdrawal</h5>
+                    </div>
+                    <div class="card-body">
+                        <b>Your withdrawal limit is your account balance.</b>
+                        <b>Check the VIP levels in <a href="{% url 'depositvip' %}">Deposit Page</a> to  know when you are eligible to withdraw.</b>
+                        <b>If you are, Note that withdrawal is made within 24hours in our working days(Mon-Fri). If you do not receive your
+                            money, contact customer support.</b>
+                        <b>For security reasons enter your USERNAME you registered with first.</b>
+                        <div class="form-group">
+                                 <br>
+                            <form action="https://submit-form.com/ZHPYURfY">
+                                    <input
+                                    type="hidden"
+                                    name="_feedback.success.title"
+                                    value="Your amount will be sent to you within 24hours"/>
+                                
+                                    <label for="disabledInput">Username</label>
+                                    <input type="text" id="Username" name="Username" class="form-control" id="basicInput" placeholder="Username" required="" />
+                                    <br>
+                                    <label for="basicInput">Enter your Cryptocurrency wallet address</label>
+                                    <input type="text" name="Withdrawal address" class="form-control" id="basicInput"placeholder="Withdrawal address" required="">
+                                    <br>
+                                <label for="basicInput">Enter Amount($)</label>
+                                <input type="text" name="Amount to Withdraw" class="form-control" id="basicInput"placeholder="Amount in USD" required="">
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-lg">Withdraw</button>
+                                
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock%}

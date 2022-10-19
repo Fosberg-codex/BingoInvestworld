@@ -1,0 +1,139 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="sidebar-wrapper active">
+    <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+           
+            <div class="logo" >
+                <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+            </div>
+            <div class="toggler">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'dashboard' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'depositvip' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Deposit</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'transaction history'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Transaction History</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item   ">
+                <a href="{% url 'withdrawal'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Withdrawal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item active  ">
+                <a href="{% url 't and c'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>T & C</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+</div>
+<div id="main">
+<header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+        <i class="bi bi-justify fs-3"></i>
+    </a>
+</header>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Terms and Condition</h3>
+                <p class="text-subtitle text-muted">Start depositing to see returns soon</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">T and C</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Privacy Policy</h5>
+                    </div>
+                    <div class="card-body">
+                        <b>Protecting the privacy and safeguarding the personal and financial information of our clients and website visitors is one of our highest priorities. The following Privacy Statement explains how BINGO INVEST collects and protects your personal information. References to "BINGO INVEST" in this Privacy Statement include all BINGO INVEST companies and divisions, including FOREX.com. 
+                            By opening a BINGO INVEST account or by using BINGO INVEST websites, you give your consent to the collection and use of personal information by BINGO INVEST as explained in this Privacy Statement. </b>
+                            <hr>
+                            <h4>Collection Of Personal Information</h4>
+                            <b>
+                                We collect your personal information directly from you and indirectly as a result of your relationship with us. BINGO INVEST may use the information collected from you to verify your identity and contact information, establish your trading account, issue you an account number and a secure password, maintain your account activity and contact you with account information, among other reasons. This information also helps us improve our services to you, customize your browsing experience and inform you about additional products, services or promotions that may be of interest to you. 
+                                You directly provide us with the majority of information we collect. This information includes your contact details, including name, mailing address, telephone number and e-mail.
+                                The information we collect indirectly from you includes your Internet protocol ("IP") address, browser type, operating system, Internet service provider (ISP), time stamps and transaction history.
+                                Should you close your account with us, BINGO INVEST  will retain your information, but only use it to comply with regulatory requirements and to periodically contact you to offer you the opportunity to reactivate your account or participate in other offers. 
+                            </b>
+                            <hr>
+                            <h4>The security of your personal information</h4>
+                            <b>
+                                We employ security software, systems and procedures to offer you a safe and secure trading environment and to protect your personal, financial and trading information. 
+                                When you open an account with us, you are issued a unique account number, User ID and a password. Only a limited number of BINGO INVEST employees who have a need to know this information will have access to your account number, UserID, and password. Remember that you are ultimately responsible for maintaining the secrecy of your account number, UserID and password. We strongly recommend that you do not disclose this information to anyone. 
+                                On our websites and online account application we use technology to encrypt information transmitted by or to you. We use certificate authority (CA) certificates to authenticate our websites and secure trading and customer-facing applications, allowing you to verify that you are connected to our websites. 
+                            </b>
+                            <hr>
+                            <h4>Changes to this Privacy Statement and Opting Out</h4>
+                            <b>
+                                In the event BINGO INVEST materially changes this Privacy Statement, the revised Privacy Statement will promptly be posted to our websites. By opening an account with us, you are deemed to agree to accept posting of a revised Privacy Statement electronically on our website as actual notice to you. 
+                                Under certain circumstances, such as with respect to our sharing of your personal information with non-affiliated third parties, you may inform us that you would like to "opt out" by contacting us through the contact information listed below. Note that for joint accounts, an-opt out election made by one account owner of a joint account is applicable to all account owners of the joint account. An opt-out election must be made for each separate account you hold at BINGO INVEST. 
+                            </b>
+                            <hr>
+                            <b>
+                                Any dispute over our Privacy Statement is subject to this notice and the BINGO INVEST Customer Agreement. If you have any questions that this Privacy Statement does not address, please contact a Client Services representative. 
+                                You may contact BINGO INVEST for any reason under this Privacy Statement, or otherwise, as follows:
+                                International: 1.958.315.0653
+                                Email:
+                            </b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock%}

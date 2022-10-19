@@ -1,0 +1,200 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="sidebar-wrapper active">
+    <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+           
+            <div class="logo" >
+                <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+            </div>
+            <div class="toggler">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+
+            <li class="sidebar-item ">
+                <a href="{% url 'dashboard' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item active  ">
+                <a href="{% url 'depositvip' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Deposit</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'transaction history' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Transaction History</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'withdrawal' %}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Withdrawal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 't and c'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>T & C</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+</div>
+<div id="main">
+<header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+        <i class="bi bi-justify fs-3"></i>
+    </a>
+</header>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Investment Offers</h3>
+                <p class="text-subtitle text-muted">For user to check they list</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Deposit</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="row">
+            <div class="col-12 col-md-8 offset-md-2">
+                <div class="pricing">
+                    <div class="row align-items-center">
+                        <div class="col-md-4 px-0">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h4 class="card-title">VIP 1</h4>
+                                </div>
+                                <h3 class="text-center">$100-$299</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 3% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 3 months</li>
+                                    <li><i class="bi bi-check-circle"></i>70% cash back plan on deposited amount</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-primary btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <div class="card card-highlighted">
+                                <div class="card-header text-center">
+                                    <h4 class="card-title">VIP 2</h4>
+                                    <p>Preferred by many investors</p>
+                                </div>
+                                <h3 class="text-center text-white">$300- $999</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 5% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 2.5months</li>
+                                    <li><i class="bi bi-check-circle"></i>73% cash back plan on deposited amount</li>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-light-success btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h4 class="card-title">VIP 3</h4>
+                                </div>
+                                <h3 class="text-center">$1,000- $4,999</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 7% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 2 months</li>
+                                    <li><i class="bi bi-check-circle"></i>77% cash back plan on deposited amount</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-primary btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h4 class="card-title">VIP 4</h4>
+                                </div>
+                                <h3 class="text-center">$5,000-$9,999</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 10% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 2 months</li>
+                                    <li><i class="bi bi-check-circle"></i>82% cash back plan on deposited amount</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-primary btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h2 class="text-center">VIP 5</h2>
+                                </div>
+                                <h4 class="text-center">$10,000-$12,000</h4>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 13% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 1.5months</li>
+                                    <li><i class="bi bi-check-circle"></i>86% cash back plan on deposited amount</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-primary btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 px-0">
+                            <div class="card">
+                                <div class="card-header text-center">
+                                    <h4 class="card-title">VIP 6</h4>
+                                </div>
+                                <h3 class="text-center">$12,000$ Above</h3>
+                                <ul>
+                                    <li><i class="bi bi-check-circle"></i>Daily 17% profit daily</li>
+                                    <li><i class="bi bi-check-circle"></i>Withdraw after 1 months</li>
+                                    <li><i class="bi bi-check-circle"></i>95% cash back plan on deposited amount</li>
+                                </ul>
+                                <div class="card-footer">
+                                    <a href="{% url 'deposit' %}"><button class="btn btn-primary btn-block">Deposit Now</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock%}

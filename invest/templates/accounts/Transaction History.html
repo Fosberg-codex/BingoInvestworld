@@ -1,0 +1,152 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<div id="sidebar" class="active">
+    <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+            <div class="d-flex justify-content-between">
+               
+                <div class="logo" >
+                    <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+                </div>
+                <div class="toggler">
+                    <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu">
+                <li class="sidebar-title">Menu</li>
+
+                <li class="sidebar-item  ">
+                    <a href="{% url 'dashboard' %}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  ">
+                    <a href="{% url 'depositvip' %}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Deposit</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item active  ">
+                    <a href="{% url 'transaction history'%}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Transaction History</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item ">
+                    <a href="{% url 'withdrawal'%}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Withdrawal</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  ">
+                    <a href="{% url 't and c'%}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>T & C</span>
+                    </a>
+                </li>
+
+                <li class="sidebar-item  ">
+                    <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    </div>
+</div>
+<div id="main">
+    <header class="mb-3">
+        <a href="#" class="burger-btn d-block d-xl-none">
+            <i class="bi bi-justify fs-3"></i>
+        </a>
+    </header>
+
+    <div class="page-heading">
+        <div class="page-title">
+            <div class="row">
+                <div class="col-12 col-md-6 order-md-1 order-last">
+                    <h3>Know how we flow Instantly</h3>
+                    <p class="text-subtitle text-muted">Track your finances</p>
+                </div>
+                <div class="col-12 col-md-6 order-md-2 order-first">
+                    <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{% url 'dashboard'%}">Dashboard</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Transaction History</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Transaction History</h5>
+                        </div>
+                        <div class="card-body">
+                            <!--  Inverse table start -->
+                            <section class="section">
+                                <div class="row" id="table-inverse">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="card-content">
+                                                <div class="card-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table table-dark mb-0">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>Transaction ID</th>
+                                                                    <th>Date</th>
+                                                                    <th>Transaction type</th>
+                                                                    <th>Amount</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                {% for t in naked %}
+                                                                <tr>
+                                                                    <td>{{t.id}}</td>
+                                                                    <td>{{t.date_created}}</td>
+                                                                    <td class="text-bold-500">{{t.Transaction_type}}</td>
+                                                                    <td>{{t.amount}}</td>
+                                                                </tr>
+                                                                {% endfor %}
+
+                                                            </tbody>
+                                                        </table>
+                                                    </div> 
+                                                </div>
+                                                <!-- table with dark -->
+                                                
+                                                <div class="card-body">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                           <!-- Inverse table end -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    {% endblock%}

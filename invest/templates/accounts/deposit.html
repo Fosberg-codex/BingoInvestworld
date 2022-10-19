@@ -1,0 +1,136 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="sidebar-wrapper active">
+    <div class="sidebar-header">
+        <div class="d-flex justify-content-between">
+           
+            <div class="logo" >
+                <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+            </div>
+            <div class="toggler">
+                <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-menu">
+        <ul class="menu">
+            <li class="sidebar-title">Menu</li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'dashboard'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item active  ">
+                <a href="{% url 'depositvip'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Deposit</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="Transaction History.html" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Transaction History</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'withdrawal'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Withdrawal</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 't and c'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>T & C</span>
+                </a>
+            </li>
+
+            <li class="sidebar-item  ">
+                <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                    <i class="bi bi-grid-fill"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+    <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+</div>
+</div>
+<div id="main">
+<header class="mb-3">
+    <a href="#" class="burger-btn d-block d-xl-none">
+        <i class="bi bi-justify fs-3"></i>
+    </a>
+</header>
+
+<div class="page-heading">
+    <div class="page-title">
+        <div class="row">
+            <div class="col-12 col-md-6 order-md-1 order-last">
+                <h3>Make Deposit</h3>
+                <p class="text-subtitle text-muted">Start depositing to see returns soon</p>
+            </div>
+            <div class="col-12 col-md-6 order-md-2 order-first">
+                <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'dashboard'%}">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Deposit</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <section class="section">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Deposit VIP 1 amount</h5>
+                    </div>
+                    <div class="card-body">
+                        <b>Write or copy our Cryptocurrency address and deposit your money in USDT. After, copy and paste</b>
+                        <b>your Transaction ID and submit. We will confirm and update your Account balance within 24hours. </b>
+                        <b>For security reasons enter the USERNAME you registered with first. </b>
+                        <div class="form-group">
+                            <br>
+                            <form action="https://submit-form.com/oV6jIj51">
+                                <input
+                                type="hidden"
+                                name="_feedback.success.title"
+                                value="Thanks for investing with BingoInvest!"/>
+                                <input
+                                type="hidden"
+                                name="_feedback.success.message"
+                                value="You will see changes in your account within 24 hours"/>
+                            <label for="disabledInput">Username</label>
+                            <input type="text" id="Username" name="Username" class="form-control" id="basicInput" placeholder="Username" required="" />
+                                    <br>
+                            <label for="disabledInput">Our Wallet Address</label>
+                            <input type="text" class="form-control" id="readonlyInput" readonly="readonly"
+                                value="TVjFKKS1kd74o2Lyo4CwetTb2yN9ebJ2bY"  />
+                                 <br>
+                                <label for="basicInput">Enter Transaction ID</label>
+                                <input type="text" id="Transaction ID" name="Transaction ID" class="form-control" id="basicInput" placeholder="ID" required="" />
+                                <br>
+                                <button type="submit" class="btn btn-primary btn-lg">I HAVE PAID</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock%}

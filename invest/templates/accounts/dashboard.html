@@ -1,0 +1,215 @@
+{%  extends 'accounts/main.html' %}
+{% load static %}
+
+
+
+{% block content %}
+
+<div id="app">
+    <div id="sidebar" class="active">
+        <div class="sidebar-wrapper active">
+            <div class="sidebar-header">
+                <div class="d-flex justify-content-between">
+                
+                    <div class="logo" >
+                        <a href="{% url 'dashboard' %}"><img src="{% static 'images\images\logo\bingo.png' %}" alt="Logo" srcset="" style="height:100px; width:140px;"></a>
+                    </div>
+                    <div class="toggler">
+                        <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="sidebar-menu">
+                <ul class="menu">
+                    <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item active ">
+                        <a href="{% url 'dashboard' %}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'depositvip' %}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Deposit</span>
+                        </a>
+                    </li>
+                    
+                    <li class="sidebar-item  ">
+                    <a href="{% url 'transaction history' %}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Transaction History</span>
+                        </a>
+                    </li>
+                    
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'withdrawal'%}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Withdrawal</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="{% url 't and c'%}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>T & C</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="{% url 'logout_user'%}" class='sidebar-link'>
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+        </div>
+        </div>
+        <div id="main">
+        <header class="mb-3">
+            <a href="#" class="burger-btn d-block d-xl-none">
+                <i class="bi bi-justify fs-3"></i>
+            </a>
+        </header>
+        <div class="page-heading">
+        <h3>Welcome {{request.user.username}} </h3>
+        <h5>Your Referral code is (<b>{{request.user.referral_code}}</b>) use it for referrals to increase your profit.</h5>
+        </div>
+        <div class="page-content">
+            <section class="row">
+                <div class="col-12 col-lg-9">
+                    <div class="row">
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <!-- <div class="col-md-4">
+                                            <figure class="">
+                                                <img src="{% static 'images\images\samples\one.png' %}" alt="#">
+                                            </figure>
+                                        </div> -->
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Total Profit</h6>
+                                        <h4 class="font-extrabold mb-0">{{request.user.total_profit}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <!-- <div class="col-md-4">
+                                            <figure class="">
+                                                <img src="{% static 'images\images\samples\four.png' %}" alt="#">
+                                            </figure>
+                                        </div> -->
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Amount Deposited</h6>
+                                        <h4 class="font-extrabold mb-0">{{request.user.amount_deposited}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <!-- <div class="col-md-4">
+                                            <figure class="">
+                                                <img src="{% static 'images\images\samples\five.png' %}" alt="#">
+                                            </figure>
+                                        </div> -->
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Amount withdrawn</h6>
+                                        <h4 class="font-extrabold mb-0">{{request.user.amount_withdrawn}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body px-3 py-4-5">
+                                    <div class="row">
+                                        <!-- <div class="col-md-4">
+                                            <figure class="">
+                                                <img src="{% static 'images\images\samples\two.png' %}" alt="#">
+                                            </figure>
+                                        </div> -->
+                                        <div class="col-md-8">
+                                            <h6 class="text-muted font-semibold">Number of Transactions</h6>
+                                        <h4 class="font-extrabold mb-0">{{request.user.number_of_transaction}}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                <h6>Referral profit per per is $5. When you refer someone, we will credit your account only when you are at VIP 1 or above</h6>
+                                <h7>PLEASE: Because of end to end security reasons, keep your password and username safe and DO NOT FORGET.</h7>
+                                <br>
+                                <h7>If you do forget your password, contact <b><a href="mailto:bingoinvest23@gmail.com">Customer Support Via Email</a></b></h7>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="col-12 col-lg-3">
+                    <div class="card">
+                        <div class="card-body py-4 px-5">
+                            <div class="d-flex align-items-center">
+                                <br>
+                                <div class="col-md-8">
+                                    <h6 class="text-muted font-semibold"><b>VIP Level</b></h6>
+                                <h4 class="font-extrabold mb-0">{{request.user.vip_level}}</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="px-4">
+                           <a href="{% url 'market' %}"><button class='btn btn-block btn-xl btn-primary font-bold mt-3'>View Financial Market</button></a> 
+                        </div>
+                        <hr>
+                        <br>
+                        <div>
+                            <h5 class="text-center">Contact Support:</h5>
+                        </div>
+                        <div class="card-content pb-4">
+                            <div class="px-4">
+                                <a href="mailto:bingoinvest23@gmail.com"><button class='btn btn-block btn-xl btn-light-danger font-bold mt-3'>Email</button></a>
+                            </div>
+                            <div class="px-4">
+                                <a href="https://wa.me/qr/R7WUJ6P3RUJPP1"><button class='btn btn-block btn-xl btn-light-success font-bold mt-3'>Whatsapp  <i class="fa fa-whatsapp"></i></button></a>
+                            </div>
+                            <div class="px-4">
+                                <a href="https://t.me/+qDw1qBQ7mocxZTkx"><button class='btn btn-block btn-xl btn-light-primary font-bold mt-3'>Telegram  <i class="fa fa-telegram"></i></button></a>
+                            </div>
+                            <div class="px-4">
+                                <a href="{% url 't and c'%}"><button class='btn btn-block btn-xl btn-danger font-bold mt-3'>T & C</i></button></a>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+            </section>
+        </div>
+       
+    </div>
+</div>
+{% endblock%}
