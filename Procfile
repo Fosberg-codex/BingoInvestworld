@@ -1,1 +1,1 @@
-web: gunicorn bingoinvest.wsgi
+web: gunicorn 'bingoinvest.wsgi'
